@@ -5,15 +5,17 @@
     <div>
 
         <div class="ui tablet computer only compact  fluid  menu">
+            <transition name="menu-popover">
             <sui-container class="borderless menu ">
                 <div class="item header borderless">
                     {{ $t('company.name') }}
                 </div>
-
-                <nuxt-link class="item" :to="localePath('/')">{{ $t('navs.home.title') }}</nuxt-link>
-                <nuxt-link class="item" :to="localePath('/about')">{{ $t('navs.about.title') }}</nuxt-link>
-                <nuxt-link class="item" :to="localePath('/contact')">{{ $t('navs.contact.title') }}</nuxt-link>
                 
+                    <nuxt-link class="item" :to="localePath('/')">{{ $t('navs.home.title') }}</nuxt-link>
+                    <nuxt-link class="item" :to="localePath('/about')">{{ $t('navs.about.title') }}</nuxt-link>
+                    
+                
+                <nuxt-link class="item" :to="localePath('/contact')">{{ $t('navs.contact.title') }}</nuxt-link>
 
                 <div class="right menu">
                     <sui-dropdown class="ui dropdown item"  v-bind:text="selected_language" button pointing>
@@ -32,6 +34,7 @@
                 </div>
 
             </sui-container>
+            </transition>
         </div>
     
 
@@ -123,7 +126,7 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
   .top-header {
     justify-content: space-between;
     padding-top: 30px;
@@ -131,10 +134,28 @@ export default {
     
   }
 
+  .menu-popover-enter {
+    opacity: 0;
+    transform: rotateY(50deg);
+    }
 
+    .menu-popover-enter-active {
+  transition: opacity, transform 200ms ease-out;
+}
+
+.menu-popover-enter-to {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
   .borderless.menu {
       border: 0px;
       box-shadow: none;
+  }
+
+  .borderless.menu a.item:hover{
+      border-bottom: 1px solid $brand-green-dark;
+      
+      color: $brand-green-dark;
   }
 
   .xp_test{
@@ -145,6 +166,16 @@ export default {
       border: none;
       //box-shadow: none;
   }
+ 
+   a.item:hover{
+       color: $brand-green-light;
+       background-color: red;
+   }
+
+   .ui.link.menu .item:hover {
+        background: #1B1C1D;
+        color: #17AA1C;
+    }
 
   .top-header__logo {
     text-align: center;
