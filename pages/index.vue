@@ -1,6 +1,6 @@
 <template>
   
-  <div class="ui grid center aligned stackable" >
+  <div class="ui grid center aligned stackable container" >
     <div class="sixteen wide column ">
     
       <HomeWelcome />

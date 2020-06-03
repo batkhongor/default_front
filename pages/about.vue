@@ -3,16 +3,17 @@
   <div class="container">
     
     <div>
-    
+      <HomeWelcome />
       <logo />
+      
       <h1 class="title">
         Рояал маркетингийн агентлаг
       </h1>
       <h2 class="subtitle">
         Бидний тухай илүү ихийг мэдхийг хүсвэл 
       </h2>
-
-      <HomeWelcome />
+      
+      
 
       <div class="links">
         <a
@@ -43,11 +44,13 @@ import HomeWelcome from '~/components/partials/home/HomeWelcome.vue'
 
 
 export default {
+  
   components: {
     Logo,
     HomeWelcome
   }
 }
+</script>
 
 
 

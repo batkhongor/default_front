@@ -1,6 +1,6 @@
 <template>
   <div class="bg-light-elevatedSurface dark:bg-dark-elevatedSurface shadow-nuxt">
-    <div class="segment">
+    <div >
         <div class="subtitle">
             <p> <br>
                 Бид таны бизнесийн үнэ цэнийг зах зээлд таниулж, <br>
@@ -10,3 +10,9 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'HomeWelcome'
+};
+</script>
