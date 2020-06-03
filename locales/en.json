@@ -1,0 +1,16 @@
+{
+  "welcome": "Welcome",
+  "company": {
+    "name" : "Royal Marketing Agency",
+    "location": "13th Khoroolol, Bayanzurkh district, Ulaanbaatar"
+  },
+  "navs": {
+    "home": {"title": "Home", "link": ""}, 
+    "about": {"title": "About", "link": "about"}, 
+    "service": {"title": "Our service", "link": "service"}, 
+    "news": {"title": "News", "link": "news"}, 
+    "lawyers": {"title": "Online lawyers", "link": "lawyers"}, 
+    "contact": {"title": "Contact Us", "link": "contact"}
+  },
+  "copyright": "All rights reserved"
+}

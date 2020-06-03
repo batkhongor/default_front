@@ -1,0 +1,16 @@
+{
+  "welcome": "Сайн уу",
+  "company": {
+    "name" : "Рояал Маркетинг Агентлаг",
+    "location": "Улаанбаатар хот, Баянзүрх дүүрэг, 13-р хороолол"
+  },
+  "navs": {
+    "home": {"title": "Нүүр хуудас", "link": ""}, 
+    "about": {"title": "Бидний тухай", "link": "about"}, 
+    "service": {"title": "Үйлчилгээ", "link": "service"}, 
+    "news": {"title": "Мэдээ", "link": "news"}, 
+    "lawyers": {"title": "Цахим хуульч", "link": "lawyers"}, 
+    "contact": {"title": "Холбоо барих", "link": "contact"}
+  },
+  "copyright": "Зохиогчийн эрх хуулиар хамгаалагдсан"
+}
