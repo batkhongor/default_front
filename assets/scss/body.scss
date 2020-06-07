@@ -34,3 +34,12 @@ text{
 .links {
   padding-top: 15px;
 }
+
+
+page-enter-active, .page-leave-active {
+  transition: all .30s ease-out;
+}
+.page-enter, .page-leave-active {
+  opacity: 0;
+  transform-origin: 40% 60%;
+}

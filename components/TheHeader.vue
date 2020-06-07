@@ -5,16 +5,15 @@
     <div>
 
         <div class="ui tablet computer only compact  fluid  menu">
-            <transition name="menu-popover">
+            
             <sui-container class="borderless menu ">
                 <div class="item header borderless">
                     {{ $t('company.name') }}
                 </div>
                 
-                    <nuxt-link class="item" :to="localePath('/')">{{ $t('navs.home.title') }}</nuxt-link>
-                    <nuxt-link class="item" :to="localePath('/about')">{{ $t('navs.about.title') }}</nuxt-link>
-                    
-                
+                <nuxt-link class="item" :to="localePath('/')">{{ $t('navs.home.title') }}</nuxt-link>
+                <nuxt-link class="item" :to="localePath('/about')">{{ $t('navs.about.title') }}</nuxt-link>
+                <nuxt-link class="item" :to="localePath('/contact')">{{ $t('navs.service.title') }}</nuxt-link>
                 <nuxt-link class="item" :to="localePath('/contact')">{{ $t('navs.contact.title') }}</nuxt-link>
 
                 <div class="right menu">
@@ -34,7 +33,7 @@
                 </div>
 
             </sui-container>
-            </transition>
+            
         </div>
     
 
@@ -134,28 +133,36 @@ export default {
     
   }
 
-  .menu-popover-enter {
-    opacity: 0;
-    transform: rotateY(50deg);
-    }
-
-    .menu-popover-enter-active {
-  transition: opacity, transform 200ms ease-out;
-}
-
-.menu-popover-enter-to {
-  opacity: 1;
-  transform: rotateY(0deg);
-}
+ 
   .borderless.menu {
       border: 0px;
+      font-size: 16px;
       box-shadow: none;
   }
 
-  .borderless.menu a.item:hover{
-      border-bottom: 1px solid $brand-green-dark;
-      
+  .borderless.menu a.item:hover, .ui.menu .dropdown.item:hover{
       color: $brand-green-dark;
+      //font-weight: bold;
+      border-radius: 10%;
+      background-color: #FFF;
+  }
+
+
+
+  .borderless.menu a.item:hover::after, .ui.menu .dropdown.item:hover::after{
+      border-bottom: 2px solid $brand-green-dark;
+      color: $brand-green-dark;
+      width: 100%;
+      left: 0%;
+  }
+
+  .borderless.menu a.item::after, .ui.menu .dropdown.item::after{
+      content: ''; 
+      width: 0px; 
+      bottom: 0%;
+      left: 30%;    
+      position: absolute;
+      transition: all .5s ease; 
   }
 
   .xp_test{
@@ -172,10 +179,7 @@ export default {
        background-color: red;
    }
 
-   .ui.link.menu .item:hover {
-        background: #1B1C1D;
-        color: #17AA1C;
-    }
+   
 
   .top-header__logo {
     text-align: center;
@@ -193,4 +197,6 @@ export default {
   .top-header__second-navi {
     text-align: right;
   }
+
+
 </style>

@@ -36,8 +36,8 @@
 
 <script>
 
-import Logo from '~/components/Logo.vue'
-import HomeWelcome from '~/components/partials/home/HomeWelcome.vue'
+import Logo from '~/components/Logo.vue';
+import HomeWelcome from '~/components/partials/home/HomeWelcome.vue';
 
 
 
@@ -45,8 +45,24 @@ export default {
   components: {
     Logo,
     HomeWelcome
+  },
+  mounted() {
+    this.getIncidents()
+  },
+  async getIncidents() {
+    let res = await this.$store.dispatch("users");
+    console.log(res.data.data.incidents);
+  },
+  async asyncData({ $axios }) {
+    const ip = await $axios.$get('http://icanhazip.com')
+    console.log(ip)
+    
+    return { ip }
   }
-}
+
+};
+
+
 </script>
 
 

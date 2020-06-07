@@ -39,13 +39,13 @@ export default {
   /*
   ** Nuxt.js dev-modules
   */
-  buildModules: [
-  ],
+ buildModules: ['@nuxt/typescript-build'],
   /*
   ** Nuxt.js modules
   */
   modules: [
     'nuxt-i18n',
+    '@nuxtjs/axios',
     '@nuxtjs/style-resources',
     ['cookie-universal-nuxt', { alias: 'cookiz'}],
     'semantic-ui-vue/nuxt', // includes styles from semantic-ui-css
@@ -53,6 +53,10 @@ export default {
   ],
   styleResources: {
     scss: ['./assets/scss/*.scss']
+  },
+  axios: {
+    // proxyHeaders: false
+    baseURL: process.env.API_URL,
   },
   i18n: {
     locales: [

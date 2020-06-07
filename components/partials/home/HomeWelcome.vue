@@ -1,28 +1,24 @@
 <template>
-  <div class="bg-light-elevatedSurface dark:bg-dark-elevatedSurface shadow-nuxt">
-    <div >
-        <div class="subtitle">
-            <p> <br>
-                Бид таны бизнесийн үнэ цэнийг зах зээлд таниулж, <br>
-                зорилгодоо хүрэхэд тань туслана.
-            </p>
-            <button @click="changeInc()">
-              Toggle render
-            </button>
-            <transition name="slide-fade">
-              <p v-if="show">hello</p>
-            </transition>
-            After tra
-            <br>
-            This is
-        </div>
+  <div class="ui grid center aligned stackable">
+    <div class="three wide column ">
+            <logo />
     </div>
+    <div class="ten wide column subtitle">
+      <p class="left_aligned"> Бид таны бизнесийн үнэ цэнийг зах зээлд  <br>
+                таниулж, зорилгодоо хүрэхэд тань тусална. </p>
+    </div>        
+    
   </div>
 </template>
 
 <script>
+import Logo from '~/components/Logo.vue'
+
 export default {
   name: 'HomeWelcome',
+  components: {
+    Logo
+  },
   computed: {
     show() {
             

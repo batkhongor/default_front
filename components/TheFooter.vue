@@ -24,16 +24,14 @@
         </div>
         
       </div>
-
+      <br><br>
       
       <sui-divider />
 
       <div class="ui grid center aligned">
         <div class="sixteen wide column ">© 2020 {{ $t('company.name') }}. {{ $t('copyright') }}</div>
       </div>
-      <div class="ui grid center aligned">
-        <div class="sixteen wide column "></div>
-      </div>
+      
       
   </div>
 </template>
@@ -60,7 +58,7 @@
     
     width: 100%;
     display: inline-block;
-    padding: 12px 0px 20px 0px !important;
+    padding: 50px 0px 20px 0px !important;
   }
 
   .icon  {
@@ -77,12 +75,10 @@
       font-size: 24px;    
       padding-right: 0;
       margin-right: 0;
-      text-shadow: 0 1px #ddd;
+      //text-shadow: 0 1px #ddd;
       cursor: pointer;  
-
       &:hover {
         color: $brand-black;
-        
       }             
     }
   }
