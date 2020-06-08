@@ -56,7 +56,14 @@ export default {
   },
   axios: {
     // proxyHeaders: false
+    proxy: true,
+    retry: { retries: 3 },
     baseURL: process.env.API_URL,
+  },
+  proxy: {
+    '/users/': 'http://127.0.0.1:8000',
+    changeOrigin:true,
+    //'/api2/': 'http://api.another-website.com'
   },
   i18n: {
     locales: [

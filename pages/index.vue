@@ -49,15 +49,14 @@ export default {
   mounted() {
     this.getIncidents()
   },
-  async getIncidents() {
-    let res = await this.$store.dispatch("users");
-    console.log(res.data.data.incidents);
-  },
-  async asyncData({ $axios }) {
-    const ip = await $axios.$get('http://icanhazip.com')
-    console.log(ip)
-    
-    return { ip }
+  methods: {
+    async getIncidents() {
+      let res = await this.$store.dispatch("getIP")
+      console.log(res)
+      console.log("this is result data")
+
+      console.log(res.data)
+    }
   }
 
 };

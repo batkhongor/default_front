@@ -1,37 +1,21 @@
 <template>
   
-  <div class="container">
-    
-    <div>
-      <HomeWelcome />
-      <logo />
+  <div class="ui grid center aligned stackable">
       
-      <h1 class="title">
-        Рояал маркетингийн агентлаг
-      </h1>
-      <h2 class="subtitle">
-        Бидний тухай илүү ихийг мэдхийг хүсвэл 
-      </h2>
-      
-      
-
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+      <div class="ten wide column left aligned">
       </div>
-    </div>
+
+      <div class="eight wide column left aligned">
+        <p >
+          Рояал маркетинг агентлаг 2018 оноос эхлэн үйл ажиллагаа явуулж байна.
+        </p>
+      </div>
+      
+      <div class="ten wide column">
+        <TeamMembers />
+      </div>
+      <div class="ten wide column left aligned">
+      </div>
   </div>
 </template>
 
@@ -40,6 +24,7 @@
 
 import Logo from '~/components/Logo.vue'
 import HomeWelcome from '~/components/partials/home/HomeWelcome.vue'
+import TeamMembers from '~/components/partials/about/TeamMembers.vue'
 
 
 
@@ -47,7 +32,7 @@ export default {
   
   components: {
     Logo,
-    HomeWelcome
+    TeamMembers
   }
 }
 </script>
