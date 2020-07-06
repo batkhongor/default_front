@@ -31,6 +31,16 @@ export const state = () => ({
     }
   }
 
+export const getters = {
+    isAuthenticated(state) {
+      return state.auth.loggedIn
+    },
+  
+    loggedInUser(state) {
+      return this.$auth.user
+    }
+  }
+
 export const actions = {
   async nuxtServerInit({ commit }, { req }) {
     //const { body } = await fetch('https://jsonplaceholder.typicode.com/posts/1')
@@ -39,10 +49,13 @@ export const actions = {
     if(req) {      
       if (req.headers && req.headers.cookie) {
         const parsed = cookie.parse(req.headers.cookie)
+        console.log(parsed)
         try {
           //clocale = parsed.locale
           //console.log(parsed.locale)
           commit('SET_LANG',parsed.locale);
+          //this.$axios.setToken(parsed.csrftoken)
+          this.$axios.setToken('csrftoken',parsed.csrftoken)
           //this.$router.replace(this.switchLocalePath(parsed.locale));
           
         } catch (err) {
@@ -53,11 +66,15 @@ export const actions = {
     }   
   },
   async getIP ({ commit }) {
-    this.$axios.setToken('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNTkxNjAzMTA4LCJlbWFpbCI6ImFkbWluQGV4YW1wbGUuY29tIn0.cuhSzAJ2TN1yWEy-6DvAw53wWXTHswtCaH2n7btGKPE')
+    //this.$axios.setToken('uRgnk5R0JhWoyL4duzOfVl1RjolgkHTCw1OiD6kRnMR4jznizeNK4UkV91HA5P0p')
+    //this.$axios.setToken('csrftoken','m8rLgWgikcRlinDjgcziDH47QbjEA2KriIzVeHAfknwuhUq7GQpH2zX33EqsffcW')
+
+
     const ip = await this.$axios.$get('/users/')
     console.log("this is ip")
+    console.log(ip)
     console.log(ip.results)
-    commit('SET_TEAMMEMBERS', ip.results)
+    commit('SET_TEAMMEMBERS', ip)
     return ip
   }
 }

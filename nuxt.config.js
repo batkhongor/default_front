@@ -46,6 +46,7 @@ export default {
   modules: [
     'nuxt-i18n',
     '@nuxtjs/axios',
+    '@nuxtjs/auth',
     '@nuxtjs/style-resources',
     ['cookie-universal-nuxt', { alias: 'cookiz'}],
     'semantic-ui-vue/nuxt', // includes styles from semantic-ui-css
@@ -55,15 +56,34 @@ export default {
     scss: ['./assets/scss/*.scss']
   },
   axios: {
-    // proxyHeaders: false
+    proxyHeaders: true,
     proxy: true,
     retry: { retries: 3 },
-    baseURL: process.env.API_URL,
+    //baseURL: 'http://127.0.0.1:8000/api/v1/'//process.env.API_URL,
+    credentials:true
   },
   proxy: {
-    '/users/': 'http://127.0.0.1:8000',
+    '/*/': 'http://127.0.0.1:8000/api/v1',
+    '/*/*/': 'http://127.0.0.1:8000/api/v1',
+    //'/api-auth/*/': 'http://127.0.0.1:8000/',
     changeOrigin:true,
     //'/api2/': 'http://api.another-website.com'
+  },
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/rest-auth/login/', method: 'post', propertyName: 'token' },
+          logout: { url: '/api/v1/rest-auth/logout/', method: 'post' },
+          user: { url: '/api/v1/users/', method: 'get', propertyName: 'username' }
+        },
+         tokenRequired: true,
+         tokenName: 'csrftoken',
+         //tokenType: 'bearer',
+         globalToken: true,
+         //autoFetchUser: true
+      }
+    }
   },
   i18n: {
     locales: [
