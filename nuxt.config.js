@@ -60,7 +60,8 @@ export default {
     proxy: true,
     retry: { retries: 3 },
     //baseURL: 'http://127.0.0.1:8000/api/v1/'//process.env.API_URL,
-    credentials:true
+    credentials:true,
+    
   },
   proxy: {
     '/*/': 'http://127.0.0.1:8000/api/v1',
@@ -73,15 +74,15 @@ export default {
     strategies: {
       local: {
         endpoints: {
-          login: { url: '/rest-auth/login/', method: 'post', propertyName: 'token' },
+          login: { url: '/rest-auth/login/', method: 'post', propertyName: 'csrftoken' },
           logout: { url: '/api/v1/rest-auth/logout/', method: 'post' },
-          user: { url: '/api/v1/users/', method: 'get', propertyName: 'username' }
+          //user: { url: '/users/me', method: 'get', propertyName: 'username' }
         },
-         tokenRequired: true,
-         tokenName: 'csrftoken',
+         //tokenRequired: true,
+         //tokenName: 'csrftoken',
          //tokenType: 'bearer',
-         globalToken: true,
-         //autoFetchUser: true
+         //globalToken: true,
+         //autoFetchUser: false
       }
     }
   },

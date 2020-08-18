@@ -38,10 +38,14 @@ export default {
     async contactReq() {
 
       console.log("Submit Contact info")
-      //console.log(this.$axios.headers)
-      console.log(this.$axios.defaults)
+      //console.log(this.$cookiz.get('csrftoken'))
+      //console.log(this.$axios.defaults)
+
       try {
-        let response = await this.$axios.post('/contact/', this.contact_info )
+        //this.$axios.setHeader('csrftoken',this.$cookiz.get('csrftoken'))
+        this.$axios.defaults.xsrfCookieName = 'csrftoken'
+        this.$axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
+        let response = await this.$axios.post('/contact/', this.contact_info)
         
 
         console.log(response)
