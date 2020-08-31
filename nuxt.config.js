@@ -55,6 +55,11 @@ export default {
   styleResources: {
     scss: ['./assets/scss/*.scss']
   },
+
+  router: {
+    //middleware: ['auth']
+  },
+
   axios: {
     proxyHeaders: true,
     proxy: true,
@@ -66,6 +71,7 @@ export default {
   proxy: {
     '/*/': 'http://127.0.0.1:8000/api/v1',
     '/*/*/': 'http://127.0.0.1:8000/api/v1',
+    '/*/*': 'http://127.0.0.1:8000/api/v1',
     //'/api-auth/*/': 'http://127.0.0.1:8000/',
     changeOrigin:true,
     //'/api2/': 'http://api.another-website.com'
@@ -74,9 +80,11 @@ export default {
     strategies: {
       local: {
         endpoints: {
-          login: { url: '/rest-auth/login/', method: 'post', propertyName: 'csrftoken' },
-          logout: { url: '/api/v1/rest-auth/logout/', method: 'post' },
-          //user: { url: '/users/me', method: 'get', propertyName: 'username' }
+          login: { url: '/token/', method: 'post', propertyName: 'access' },
+          logout: {},
+          //logout: { url: '/api/v1/rest-auth/logout/', method: 'post' }, 
+          user: { url: '/users/me', method: 'get', propertyName: 'first_name' }
+          //user: false
         },
          //tokenRequired: true,
          //tokenName: 'csrftoken',
@@ -84,7 +92,8 @@ export default {
          //globalToken: true,
          //autoFetchUser: false
       }
-    }
+    },
+    
   },
   i18n: {
     locales: [
@@ -106,6 +115,7 @@ export default {
       }
     }
   },
+  
   /*
   ** Build configuration
   */

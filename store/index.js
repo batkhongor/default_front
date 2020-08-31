@@ -31,6 +31,7 @@ export const state = () => ({
     }
   }
 
+  /*
 export const getters = {
     isAuthenticated(state) {
       return state.auth.loggedIn
@@ -40,6 +41,7 @@ export const getters = {
       return this.$auth.user
     }
   }
+*/
 
 export const actions = {
   async nuxtServerInit({ commit }, { req }) {
@@ -75,6 +77,9 @@ export const actions = {
     console.log(ip)
     console.log(ip.results)
     commit('SET_TEAMMEMBERS', ip)
+    var ip2 = await this.$axios.$get('/users/me')
+    console.log(ip2)
+    console.log("this user/me")
     return ip
   }
 }

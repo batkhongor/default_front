@@ -15,6 +15,7 @@
                 <nuxt-link class="item" :to="localePath('/about')">{{ $t('navs.about.title') }}</nuxt-link>
                 <nuxt-link class="item" :to="localePath('/contact')">{{ $t('navs.service.title') }}</nuxt-link>
                 <nuxt-link class="item" :to="localePath('/contact')">{{ $t('navs.contact.title') }}</nuxt-link>
+                
 
                 <div class="right menu">
                     <sui-dropdown class="ui dropdown item"  v-bind:text="selected_language" button pointing>
@@ -27,8 +28,15 @@
                         
                     </sui-dropdown>
 
-                    <div class="item hidden">
-                        <div class="ui primary button">Sign In</div>
+                    
+                    <div v-if="loggedIn" class="ui item">
+                        {{ user }}
+                    </div>
+                    <div v-if="loggedIn" >
+                          <nuxt-link :to="localePath('logout', 'mn')">logout</nuxt-link>
+                    </div>
+                    <div v-else >
+                      <nuxt-link class="ui item" to="/login">Log In</nuxt-link>
                     </div>
                 </div>
 
@@ -77,6 +85,9 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
+
 export default {
     computed: {
         availableLocales () {
@@ -95,7 +106,8 @@ export default {
             set: function(newVal) {
                 this.$store.dispatch('SET_LANG', newVal)
             }
-        }
+        },
+        ...mapState('auth', ['loggedIn', 'user'])
     },
     methods: {
     changeLang (lang) {
@@ -119,6 +131,25 @@ export default {
         
 
         
+    }
+  },
+
+  data() {
+    return {
+      globalItems: [
+        {
+          title: 'Home',
+          icon: 'home',
+          to: { name: 'index' }
+        }
+      ],
+      authenticatedItems: [
+        {
+          title: this.$auth.user,
+          icon: 'logout',
+          to:  '/logout' 
+        }
+      ]
     }
   }
 }
