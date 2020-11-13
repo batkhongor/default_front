@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form @click="userLogin">
+    <form method="post" @submit.prevent="userLogin">
       <div>
         <label>Username</label>
         <input type="text" v-model="login.username" />
@@ -35,10 +35,13 @@ export default {
       try {
         
         //let response = await this.$auth.loginWith('local', { data: this.login })
-        this.$axios.defaults.xsrfCookieName = 'csrftoken'
-        this.$axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
-        let response = await this.$auth.loginWith('local', { data: this.login })
 
+        //this.$axios.defaults.xsrfCookieName = 'csrftoken'
+        //this.$axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
+        //let res = await this.$store.commit("SET_LANG", 'mn');
+
+        let response = await this.$auth.loginWith('local', { data: this.login })
+        locale
         //console.log(response)
         //console.log("Inside try")
       } catch (err) {
