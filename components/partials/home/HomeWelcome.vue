@@ -1,7 +1,7 @@
 <template>
   <div class="ui grid center aligned stackable">
-    <div class="three wide column ">
-            <logo />
+    <div class="ten wide column left aligned ">
+            
     </div>
     <div class="ten wide column subtitle">
       <p class="left_aligned"> Бид таны бизнесийн үнэ цэнийг зах зээлд  <br>

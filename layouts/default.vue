@@ -3,11 +3,12 @@
     <body >
     <div>
       <TheHeader />
-      <main class="lg:block relative pt-16 lg:pt-24">
+      <sui-divider hidden />
+      <main >
         <Nuxt />
       </main>
       
-    
+      <sui-divider hidden />
     <TheFooter />
     </div>
     </body>

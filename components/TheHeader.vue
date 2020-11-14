@@ -33,7 +33,7 @@
                         {{ user }}
                     </div>
                     <div v-if="loggedIn" >
-                          <nuxt-link :to="localePath('logout', 'mn')">logout</nuxt-link>
+                          <nuxt-link class="ui item" :to="localePath('logout', 'mn')">logout</nuxt-link>
                     </div>
                     <div v-else >
                       <nuxt-link class="ui item" to="/login">Log In</nuxt-link>

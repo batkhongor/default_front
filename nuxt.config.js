@@ -72,6 +72,7 @@ export default {
     '/*/': 'http://127.0.0.1:8000/api/v1',
     '/*/*/': 'http://127.0.0.1:8000/api/v1',
     '/*/*': 'http://127.0.0.1:8000/api/v1',
+    
     //'/api-auth/*/': 'http://127.0.0.1:8000/',
     changeOrigin:true,
     //'/api2/': 'http://api.another-website.com'
@@ -106,6 +107,7 @@ export default {
         name: 'Монгол'
       }
     ],
+    strategy: 'no_prefix',
     defaultLocale: 'mn',
     vueI18n: {
       fallbackLocale: 'mn',

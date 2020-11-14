@@ -1,18 +1,27 @@
 <template>
-  <div>
-    <form method="post" @submit.prevent="userLogin">
-      <div>
-        <label>Username</label>
-        <input type="text" v-model="login.username" />
-      </div>
-      <div>
-        <label>Password</label>
-        <input type="text" v-model="login.password" />
-      </div>
-      <div>
-        <button type="submit">Submit</button>
-      </div>
-    </form>
+  <div class="ui middle aligned center aligned grid">
+    <div class="three wide column">
+      <form class="ui form" method="post" @submit.prevent="userLogin">
+
+        <div class="ui stacked segment">
+          <div class="field">
+            <div class="ui center icon input">
+              <i class="user icon"></i>
+              <input type="text" name="username" v-model="login.username" placeholder="username">
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui center icon input">
+              <i class="lock icon"></i>
+              <input type="password" name="password" v-model="login.password" placeholder="Password">
+            </div>
+          </div>
+          <button class="ui fluid large teal submit button" type="submit">Login</button>
+        </div>
+
+        
+      </form>
+    </div>
   </div>
 </template>
 
@@ -41,7 +50,7 @@ export default {
         //let res = await this.$store.commit("SET_LANG", 'mn');
 
         let response = await this.$auth.loginWith('local', { data: this.login })
-        locale
+        
         //console.log(response)
         //console.log("Inside try")
       } catch (err) {
