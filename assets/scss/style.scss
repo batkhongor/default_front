@@ -1,8 +1,10 @@
-
-
-
 @import './body.scss';
 @import './util.scss';
 @import './colors.scss';
 
+
+.brand-green-dark{
+  background-color: $brand-green-dark !important;
+  color: white !important;
+}
 

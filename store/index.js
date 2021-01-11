@@ -15,7 +15,6 @@ export const state = () => ({
       
       if (state.locales.indexOf(locale) !== -1) {
         state.locale = locale
-        
       }
     },
 
@@ -72,14 +71,12 @@ export const actions = {
     //this.$axios.setToken('csrftoken','m8rLgWgikcRlinDjgcziDH47QbjEA2KriIzVeHAfknwuhUq7GQpH2zX33EqsffcW')
 
 
-    const ip = await this.$axios.$get('/users/')
+    const ip = await this.$axios.$get('/v1/users/')
     console.log("this is ip")
     console.log(ip)
     console.log(ip.results)
     commit('SET_TEAMMEMBERS', ip)
-    var ip2 = await this.$axios.$get('/users/me')
-    console.log(ip2)
-    console.log("this user/me")
+    
     return ip
   }
 }

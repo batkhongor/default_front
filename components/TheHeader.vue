@@ -14,7 +14,7 @@
                 <nuxt-link class="item" :to="localePath('/')">{{ $t('navs.home.title') }}</nuxt-link>
                 <nuxt-link class="item" :to="localePath('/about')">{{ $t('navs.about.title') }}</nuxt-link>
                 <nuxt-link class="item" :to="localePath('/contact')">{{ $t('navs.service.title') }}</nuxt-link>
-                <nuxt-link class="item" :to="localePath('/contact')">{{ $t('navs.contact.title') }}</nuxt-link>
+                <nuxt-link class="item" :to="localePath('/news')">{{ $t('navs.news.title') }}</nuxt-link>
                 
 
                 <div class="right menu">

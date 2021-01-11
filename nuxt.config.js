@@ -69,9 +69,10 @@ export default {
     
   },
   proxy: {
-    '/*/': 'http://127.0.0.1:8000/api/v1',
-    '/*/*/': 'http://127.0.0.1:8000/api/v1',
-    '/*/*': 'http://127.0.0.1:8000/api/v1',
+    '/v1': 'http://127.0.0.1:8000/api',
+    '/media/': 'http://127.0.0.1:8000',
+    //'/*/*/': 'http://127.0.0.1:8000/api/v1',
+    //'/*/*': 'http://127.0.0.1:8000/api/v1',
     
     //'/api-auth/*/': 'http://127.0.0.1:8000/',
     changeOrigin:true,
@@ -81,10 +82,10 @@ export default {
     strategies: {
       local: {
         endpoints: {
-          login: { url: '/token/', method: 'post', propertyName: 'access' },
+          login: { url: '/v1/token/', method: 'post', propertyName: 'access' },
           logout: {},
           //logout: { url: '/api/v1/rest-auth/logout/', method: 'post' }, 
-          user: { url: '/users/me', method: 'get', propertyName: 'first_name' }
+          user: { url: '/v1/users/me', method: 'get', propertyName: 'first_name' }
           //user: false
         },
          //tokenRequired: true,

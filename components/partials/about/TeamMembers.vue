@@ -5,7 +5,7 @@
         Багийн гишүүд 
     </h2>
 
-    <sui-card-group :items-per-row="3" class="ui grid  center aligned stackable">
+    <sui-card-group :items-per-row="3" class="ui grid link  center aligned stackable">
       <sui-card class="four wide column"
         v-for="member in team_members"
         :key="member.username"

@@ -66,10 +66,6 @@
     
   }
 
-  .left_aligned {
-    text-align: left;
-  }
-
   i {
     &.icon {
       font-size: 24px;    
