@@ -1,5 +1,5 @@
 # Vue web template
-Template vue web app for small business. 
+Template vue web app for a small business. 
 
 Implemented following modules
 - multilanguage support 'nuxt-i18n'
