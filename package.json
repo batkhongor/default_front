@@ -14,7 +14,7 @@
     "@nuxt/types": "^2.14.12",
     "@nuxtjs/auth": "^4.9.1",
     "@nuxtjs/proxy": "^2.1.0",
-    "axios": "^0.21.0",
+    "axios": "^0.21.1",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
