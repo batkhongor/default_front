@@ -1,8 +1,11 @@
 # Vue web template
+Template vue web app for small business. 
 
-royal marketing agency
-Template vue web app for small business
-It includes
+Implemented following modules
+- multilanguage support 'nuxt-i18n'
+- authentication 'nuxtjs/auth'
+- styled components 'semantic-ui-vue/nuxt'
+- server side rendering
 
 ## Build Setup
 
