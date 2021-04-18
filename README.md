@@ -1,6 +1,8 @@
-# royal_front
+# Vue web template
 
 > royal marketing agency
+> Template vue web app for small business
+> It includes
 
 ## Build Setup
 
